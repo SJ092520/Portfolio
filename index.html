@@ -21,6 +21,7 @@
   <script type="module" src="/main.js"></script>
   <script>
     function startGame(name, color) {
+      console.log(document.getElementById('name').nodeValue);
       window.localStorage.setItem('name', name);
       window.localStorage.setItem('color', color);
       document.getElementById('question').remove();

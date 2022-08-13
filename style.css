@@ -120,14 +120,27 @@ button:focus-visible {
 
 .input{
   border-radius: 25px;
-  border: 2px solid #609;
-  padding: 10px;
+  border: 2px solid rgb(35, 1, 52);
+  padding: 10px 20px;
+  text-align: center;
   transform: rotate3d(0.5, 0.5, 0, 15deg);
-  animation: rotator 10s linear infinite;
+  animation: rotator 6s ease-in-out infinite alternate;
   font-size: x-large;
-  
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.547), rgba(0, 0, 0, 0.448));
+  color: white;
+  margin: 10px;
 }
-
+button{
+  margin: 5px;
+}
+.blue-btn{
+  border: 2px solid rgb(1, 0, 51);
+  background: linear-gradient(45deg, rgba(60, 46, 169, 0.8), rgba(158, 19, 183, 0.5));;
+}
+.red-btn{
+  border: 2px solid rgb(51, 0, 1);
+  background: linear-gradient(45deg, rgba(183, 19, 158, 0.5), rgba(169, 46, 60, 0.8));;
+}
 @keyframes rotator {
   0%,100% {
       transform: rotate3d(0.5, 0.5, 0, 0deg);
