@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { io } from 'socket.io-client';
+
+
 
 
 const sizes = {
@@ -51,12 +54,36 @@ document.body.appendChild(renderer.domElement);
 // const start = textureLoader.load('./textures/start.png')
 
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 
 
 
+const clock = new THREE.Clock();
+const tick = () => {
 
+  const elapsedTime = clock.getElapsedTime()
+
+  // camera.position.y -= 1
+  // y*= 0.97
+  // Update Orbital Controls
+  controls.update()
+
+  // Render
+  renderer.render(scene, camera)
+
+  // Call tick again on the next frame
+  window.requestAnimationFrame(tick)
+
+  const socket = io("http://localhost:5000");
+  socket.on('getFromServer', (data) => {
+    console.log(data)
+    if (localStorage.name6)
+      socket.emit
+  });
+}
+
+tick()
 
 
 
